@@ -34,6 +34,10 @@ public class Pessoa implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataDeCadastro;
 
+    @ManyToOne(optional=false)
+    @ForeignKey(name = "PessoaSexo")
+    private Pessoa pessoa;
+    
     public Pessoa() {
     }
 
