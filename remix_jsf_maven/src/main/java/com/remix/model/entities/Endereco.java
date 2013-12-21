@@ -39,30 +39,30 @@ public class Endereco implements Serializable {
     private Pessoa pessoa;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @ForeignKey(name="EnderecoTipoLogradouro")
-    @JoinColumn(name="IdTipoLogradouro", referencedColumnName = "IdTipoLogradouro")
-    private TipoLogradouro tipoLogradouro;
-    
+    @ForeignKey(name = "EnderecoTipoLogradouro")
+    @JoinColumn(name = "IdTipoLogradouro", referencedColumnName = "IdTipoLogradouro")
+    private TipoLogradouro tipologradouro;
+
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @ForeignKey(name="EnderecoEstado")
-    @JoinColumn(name="IdEstado", referencedColumnName = "IdEstado")
+    @ForeignKey(name = "EnderecoEstado")
+    @JoinColumn(name = "IdEstado", referencedColumnName = "IdEstado")
     private Estado estado;
-    
+
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @ForeignKey(name="EnderecoTipoEndereco")
-    @JoinColumn(name="IdTipoEndereco", referencedColumnName = "IdTipoEndereco")
-    private TipoEndereco tipoEndereco;
-    
+    @ForeignKey(name = "EnderecoTipoEndereco")
+    @JoinColumn(name = "IdTipoEndereco", referencedColumnName = "IdTipoEndereco")
+    private TipoEndereco tipoendereco;
+
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @ForeignKey(name="EnderecoCidade")
-    @JoinColumn(name="IdCidade", referencedColumnName = "IdCidade")
+    @ForeignKey(name = "EnderecoCidade")
+    @JoinColumn(name = "IdCidade", referencedColumnName = "IdCidade")
     private Cidade cidade;
 
     public Endereco() {
         this.cidade = new Cidade();
         this.estado = new Estado();
-        this.tipoLogradouro = new TipoLogradouro();
-        this.tipoEndereco = new TipoEndereco();
+        this.tipologradouro = new TipoLogradouro();
+        this.tipoendereco = new TipoEndereco();
         this.pessoa = new Pessoa();
     }
 
@@ -123,11 +123,11 @@ public class Endereco implements Serializable {
     }
 
     public TipoLogradouro getTipoLogradouro() {
-        return tipoLogradouro;
+        return tipologradouro;
     }
 
     public void setTipoLogradouro(TipoLogradouro tipoLogradouro) {
-        this.tipoLogradouro = tipoLogradouro;
+        this.tipologradouro = tipoLogradouro;
     }
 
     public Estado getEstado() {
@@ -139,11 +139,11 @@ public class Endereco implements Serializable {
     }
 
     public TipoEndereco getTipoEndereco() {
-        return tipoEndereco;
+        return tipoendereco;
     }
 
     public void setTipoEndereco(TipoEndereco tipoEndereco) {
-        this.tipoEndereco = tipoEndereco;
+        this.tipoendereco = tipoEndereco;
     }
 
     public Cidade getCidade() {
