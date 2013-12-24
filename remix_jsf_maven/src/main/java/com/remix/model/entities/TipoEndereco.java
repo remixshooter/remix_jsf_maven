@@ -31,14 +31,6 @@ public class TipoEndereco implements Serializable {
     public TipoEndereco() {
     }
 
-    public Integer getIdTipoEndereco() {
-        return idTipoEndereco;
-    }
-
-    public void setIdTipoEndereco(Integer idTipoEndereco) {
-        this.idTipoEndereco = idTipoEndereco;
-    }
-
     public String getDescricaoTipoEndereco() {
         return descricaoTipoEndereco;
     }
@@ -55,11 +47,12 @@ public class TipoEndereco implements Serializable {
         this.enderecos = enderecos;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + (this.idTipoEndereco != null ? this.idTipoEndereco.hashCode() : 0);
-        return hash;
+    public Integer getIdTipoEndereco() {
+        return idTipoEndereco;
+    }
+
+    public void setIdTipoEndereco(Integer idTipoEndereco) {
+        this.idTipoEndereco = idTipoEndereco;
     }
 
     @Override
@@ -75,5 +68,12 @@ public class TipoEndereco implements Serializable {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + (this.idTipoEndereco != null ? this.idTipoEndereco.hashCode() : 0);
+        return hash;
     }
 }

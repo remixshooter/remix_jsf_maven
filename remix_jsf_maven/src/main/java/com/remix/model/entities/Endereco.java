@@ -45,7 +45,7 @@ public class Endereco implements Serializable {
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @ForeignKey(name = "EnderecoEstado")
-    @JoinColumn(name = "IdEstado", referencedColumnName = "IdEstado")
+    @JoinColumn(name = "IdEstado", nullable = false)
     private Estado estado;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
@@ -122,14 +122,6 @@ public class Endereco implements Serializable {
         this.pessoa = pessoa;
     }
 
-    public TipoLogradouro getTipoLogradouro() {
-        return tipologradouro;
-    }
-
-    public void setTipoLogradouro(TipoLogradouro tipoLogradouro) {
-        this.tipologradouro = tipoLogradouro;
-    }
-
     public Estado getEstado() {
         return estado;
     }
@@ -138,12 +130,20 @@ public class Endereco implements Serializable {
         this.estado = estado;
     }
 
-    public TipoEndereco getTipoEndereco() {
+    public TipoEndereco getTipoendereco() {
         return tipoendereco;
     }
 
-    public void setTipoEndereco(TipoEndereco tipoEndereco) {
-        this.tipoendereco = tipoEndereco;
+    public void setTipoendereco(TipoEndereco tipoendereco) {
+        this.tipoendereco = tipoendereco;
+    }
+
+    public TipoLogradouro getTipologradouro() {
+        return tipologradouro;
+    }
+
+    public void setTipologradouro(TipoLogradouro tipologradouro) {
+        this.tipologradouro = tipologradouro;
     }
 
     public Cidade getCidade() {
@@ -156,8 +156,8 @@ public class Endereco implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + (this.idEndereco != null ? this.idEndereco.hashCode() : 0);
+        int hash = 5;
+        hash = 97 * hash + (this.idEndereco != null ? this.idEndereco.hashCode() : 0);
         return hash;
     }
 
@@ -175,4 +175,5 @@ public class Endereco implements Serializable {
         }
         return true;
     }
+
 }
